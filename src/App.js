@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import SearchBar from './components/SearchBar';
+import Clock from './components/Clock';
 
 const API_Key = "5311918c1c662f293ab051013c9773de"
 
@@ -15,8 +16,7 @@ function App() {
           <SearchBar />
         </div>
         <div className="body">
-          <button onClick={() => setCount(clickCount + 1)} className="countbtn">Click to count</button>
-          <p className="counter">You've clicked {clickCount} times!</p>
+          <Clock />
         </div>
         <div className="footer"></div>
       </div>
