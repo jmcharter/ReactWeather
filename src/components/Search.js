@@ -60,29 +60,34 @@ class Search extends React.Component {
 
     render() {
         return (
-            <div>
-                <div className="search-container">
-                    <input
-                        type="text"
-                        className="searchbar"
-                        placeholder="Enter location..."
-                        onChange={this._handleChange}
-                        onKeyPress={this._handleKeyPress}
-                    />
-                </div>
-                {(this.state.dataFound === 1) ? (
-                    <div>
-                        <h2>{this.state.Weather.city}, {this.state.Weather.country}</h2>
-                        <div>
-                            <Clock timezone={this.state.Weather.timezone} />
-                            <Temperature
-                                temp={this.state.Weather.temperature}
-                                condition={this.state.Weather.condition}
-                                icon={this.state.Weather.icon} />
-                        </div>
+
+            <div className="search"
+                style={(this.state.dataFound === 1) ? { backgroundImage: `url(https://source.unsplash.com/1600x900/?${this.state.Weather.city.split(" ").join("")},${this.state.Weather.condition})` } : {}}>
+
+                <div className="outer">
+                    <div className="search-container">
+                        <input
+                            type="text"
+                            className="searchbar"
+                            placeholder="Enter location..."
+                            onChange={this._handleChange}
+                            onKeyPress={this._handleKeyPress}
+                        />
                     </div>
-                ) : ('')}
-            </div>
+                    {(this.state.dataFound === 1) ? (
+                        <div>
+                            <h2>{this.state.Weather.city}, {this.state.Weather.country}</h2>
+                            <div>
+                                <Clock timezone={this.state.Weather.timezone} />
+                                <Temperature
+                                    temp={this.state.Weather.temperature}
+                                    condition={this.state.Weather.condition}
+                                    icon={this.state.Weather.icon} />
+                            </div>
+                        </div>
+                    ) : ('')}
+                </div>
+            </div >
         )
     };
 }

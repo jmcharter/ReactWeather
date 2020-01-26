@@ -10,6 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #000;
 }
 
 code {
@@ -17,8 +18,8 @@ code {
     monospace;
 }
 
-.app {
-  background: url("../src/assets/img/mountains.jpg");
+.search {
+  background-image: url("../src/assets/img/mountains.jpg");
   background-size: cover;
   background-position: bottom;
   min-height: 100vh;
@@ -29,4 +30,3 @@ code {
   min-height: 100vh;
   padding: 1rem;
 }
-
