@@ -2,7 +2,6 @@ import React from 'react';
 import Clock from '../components/Clock';
 import Temperature from '../components/Temperature';
 
-
 class Search extends React.Component {
     constructor(props) {
         super(props);
@@ -11,7 +10,7 @@ class Search extends React.Component {
                 linkStart: "https://api.openweathermap.org/data/2.5/weather?q=",
                 location: "",
                 linkEnd: "&units=metric&appid=",
-                key: "5311918c1c662f293ab051013c9773de"
+                key: process.env.API_KEY
             },
             Weather: 'default',
             dataFound: 0
@@ -30,7 +29,10 @@ class Search extends React.Component {
                         Weather: {
                             city: data.name,
                             country: data.sys.country,
-                            temperature: Math.round(data.main.temp)
+                            temperature: Math.round(data.main.temp),
+                            timezone: data.timezone,
+                            condition: data.weather[0].main,
+                            icon: data.weather[0].icon
                         },
                         dataFound: 1
 
@@ -72,8 +74,11 @@ class Search extends React.Component {
                     <div>
                         <h2>{this.state.Weather.city}, {this.state.Weather.country}</h2>
                         <div>
-                            <Clock />
-                            <Temperature temp={this.state.Weather.temperature} />
+                            <Clock timezone={this.state.Weather.timezone} />
+                            <Temperature
+                                temp={this.state.Weather.temperature}
+                                condition={this.state.Weather.condition}
+                                icon={this.state.Weather.icon} />
                         </div>
                     </div>
                 ) : ('')}

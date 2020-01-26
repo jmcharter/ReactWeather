@@ -4,14 +4,16 @@ const moment = require('moment');
 class Clock extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            date: moment().format("dddd, DDDo MMMM YYYY"),
-            week: moment().format("W"),
-            time: moment().format("HH:mm:ss")
-        };
+        this.state = {};
     }
 
     componentDidMount() {
+        this.setState({
+            date: moment().add(this.props.timezone, 's').format("dddd, DDDo MMMM YYYY"),
+            week: moment().add(this.props.timezone, 's').format("W"),
+            time: moment().add(this.props.timezone, 's').format("HH:mm:ss")
+        })
+
         this.timerID = setInterval(() => {
             this.tick();
         }, 1000);
@@ -23,9 +25,9 @@ class Clock extends React.Component {
 
     tick() {
         this.setState({
-            date: moment().format("dddd, DDDo MMMM YYYY"),
-            week: moment().format("W"),
-            time: moment().format("HH:mm:ss")
+            date: moment().add(this.props.timezone, 's').format("dddd, DDDo MMMM YYYY"),
+            week: moment().add(this.props.timezone, 's').format("W"),
+            time: moment().add(this.props.timezone, 's').format("HH:mm:ss")
         });
     }
 

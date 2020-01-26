@@ -12,7 +12,11 @@ class Temperature extends React.Component {
         return (
             <div className="temp-container">
                 <div className="temp-display">
-                    <h3>{this.props.temp}°c</h3>
+                    <h2>{this.props.temp}°c</h2>
+                    <div className="icon">
+                        <img src={`http://openweathermap.org/img/wn/${this.props.icon}@2x.png`}></img>
+                    </div>
+                    <h3>{this.props.condition}</h3>
                 </div>
             </div>
         )

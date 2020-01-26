@@ -1,4 +1,6 @@
 .search-container {
+    display: flex;
+    justify-content: center;
     position: relative;
     width: 100%;
 }
@@ -6,6 +8,7 @@
 .searchbar {
     color: black;
     width: 100%;
+    max-width: 500px;
     height: 4rem;
     padding: 1rem;
 
@@ -19,6 +22,10 @@
 }
 
 .date-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
     margin-top: 1rem;
     font-weight: 700;
     font-size: 1.25rem;
@@ -34,19 +41,31 @@
 }
 
 .temp-display {
+    display: flex;
     width: 60%;
+    max-width: 500px;
     background: rgba(255, 255, 255, .5);
     box-shadow: 2px 4px rgba(0,0,0,0.3);
     padding: 1.5rem;
+    align-items: center;
+    flex-flow: column;
     
 }
 
-.temp-display h3 {
+.temp-display h2, .temp-display h3 {
     text-shadow: 0.1rem 0.3rem rgba(0,0,0,0.8);
-    text-align: center;
     color: #fff;
     font-size: 4rem;
     font-weight: 1000;
+}
+
+.temp-display h3 {
+    font-size: 2rem;
+}
+
+.temp-display .icon {
+    height: 75px;
+    overflow: hidden;
 }
 
 h2 {
