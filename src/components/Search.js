@@ -10,7 +10,7 @@ class Search extends React.Component {
                 linkStart: "https://api.openweathermap.org/data/2.5/weather?q=",
                 location: "",
                 linkEnd: "&units=metric&appid=",
-                key: process.env.API_KEY
+                key: process.env.REACT_APP_API_KEY
             },
             Weather: 'default',
             dataFound: 0
