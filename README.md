@@ -1,6 +1,6 @@
 # React Weather App
 
-# [Live App](weather.joncharter.co.uk)
+### [Live App](weather.joncharter.co.uk)
 
 As a project to teach myself react, I have am building a react based weather app.
 
