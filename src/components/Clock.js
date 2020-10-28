@@ -9,7 +9,7 @@ class Clock extends React.Component {
 
     componentDidMount() {
         this.setState({
-            date: moment().add(this.props.timezone, 's').format("dddd, DDDo MMMM YYYY"),
+            date: moment().add(this.props.timezone, 's').format("dddd, Do MMMM YYYY"),
             week: moment().add(this.props.timezone, 's').format("W"),
             time: moment().add(this.props.timezone, 's').format("HH:mm:ss")
         })
@@ -25,7 +25,7 @@ class Clock extends React.Component {
 
     tick() {
         this.setState({
-            date: moment().add(this.props.timezone, 's').format("dddd, DDDo MMMM YYYY"),
+            date: moment().add(this.props.timezone, 's').format("dddd, Do MMMM YYYY"),
             week: moment().add(this.props.timezone, 's').format("W"),
             time: moment().add(this.props.timezone, 's').format("HH:mm:ss")
         });
